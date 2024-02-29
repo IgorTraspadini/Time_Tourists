@@ -1,9 +1,8 @@
-import React from  'react';
+import React from "react";
+import Wrapper from "../Wrapper";
 
 function UserSelectForm() {
-    return (
-        <div>Form</div>
-    )
+  return <Wrapper>Form</Wrapper>;
 }
 
-export default UserSelectForm
+export default UserSelectForm;

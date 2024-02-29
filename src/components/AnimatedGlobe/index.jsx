@@ -1,7 +1,8 @@
 import React from "react";
+import Wrapper from "../Wrapper";
 
 function AnimatedGlobe() {
-  return <div>AnimatedGlobe</div>;
+  return <Wrapper>AnimatedGlobe</Wrapper>;
 }
 
 export default AnimatedGlobe;

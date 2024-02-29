@@ -1,9 +1,7 @@
-import React from  'react';
+import React from "react";
 
 function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">Navbar</nav>
-    )
+  return <nav className="bg-slate-300 p-4">Navbar</nav>;
 }
 
-export default Navbar
+export default Navbar;

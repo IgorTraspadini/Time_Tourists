@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="flex column-reverse md:row">
         <AnimatedGlobe />
         <Routes>
           <Route index element={<SignIn />} />
