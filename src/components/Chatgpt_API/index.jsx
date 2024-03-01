@@ -27,7 +27,7 @@ function ChatComponent() {
     <>
       <div>
         <form onSubmit={getOpenAIResponse}>
-          <input
+          <input style={{width: "300px"}}
             id="chat-input"
             type="text"
             value={prompt}
