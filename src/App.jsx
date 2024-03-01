@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import History from "./components/pages/History";
 import UserSelectForm from "./components/pages/UserSelectForm";
 import UserContextProvider from "./context/UserContext";
+import ChatChatComponent from "./components/Chatgpt_API";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <main className="flex column-reverse md:row">
         <AnimatedGlobe />
+        <ChatChatComponent/>
         <Routes>
           <Route index element={<SignIn />} />
           <Route path="history" element={<History />} />
