@@ -10,7 +10,7 @@ function ChatComponent() {
   });
 
   const [response, setResponse] = useState('');
-  const [prompt, setPrompt] = useState('What are the itinerary of things that I must see in China on Summer in a very summarised way no longer than 130 tokens using bullet points style "->"');
+  const [prompt, setPrompt] = useState('What are the itinerary of things related to music that I must see in China on Summer in a very summarised way no longer than 130 tokens using bullet points style "->"');
   const output = [];
 
   const getOpenAIResponse = async (e) => {
