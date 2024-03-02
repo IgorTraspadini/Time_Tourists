@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function ChatComponent() {
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "",
     dangerouslyAllowBrowser: true,
   });
 
