@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <main className="flex column-reverse md:row">
         <AnimatedGlobe />
-        <ChatChatComponent/>
+        <ChatChatComponent where="China" when="Spring" interested="Music"/>
         <Routes>
           <Route index element={<SignIn />} />
           <Route path="history" element={<History />} />
