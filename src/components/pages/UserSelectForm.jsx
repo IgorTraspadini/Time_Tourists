@@ -1,8 +1,86 @@
 import React from "react";
 import Wrapper from "../Wrapper";
+import { useUserContext } from "../../context/UserContext";
+import InputField from "../InputField";
+import DropdownField from "../DropdownField";
 
 function UserSelectForm() {
-  return <Wrapper>Form</Wrapper>;
+  const { user } = useUserContext();
+
+  const [historySearch, setHistorySearch] = React.useState({
+    location: "",
+    season: "",
+    interest: "",
+  });
+
+  const handleInputChange = (value, key) => {
+    setHistorySearch((previsonHistorySearch) => ({
+      ...previsonHistorySearch,
+      [key]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // check for empty fields, prevent submit if there are any empty fields
+    if (Object.values(historySearch).some((field) => field === "")) {
+      return;
+    }
+
+    // send data
+  };
+  return (
+    <Wrapper>
+      <form
+        onSubmit={handleSubmit}
+        className="flex h-full justify-center flex-col justify-items-center p-3 border rounded border-sky-300"
+      >
+        <div className="text-center mb-4">
+          {user && <h1 className="text-3xl font-bold mb-1">Hi, {user.name}</h1>}
+        </div>
+        <div className="mx-auto w-4/5 mt-3">
+          <InputField
+            inputId={"location"}
+            inputLabel="Where would you like to go?"
+            inputType="text"
+            placeholder="China"
+            value={historySearch.location}
+            handleInputChange={(e) =>
+              handleInputChange(e.target.value, "location")
+            }
+            required
+          />
+
+          <DropdownField
+            currentOption={historySearch.season}
+            dropdownOptions={["Summer", "Winter", "Spring", "Autumn"]}
+            selectOption={(option) => handleInputChange(option, "season")}
+            placeholder="When would you like to visit?"
+            optionPlaceholder="Select a season"
+          />
+
+          <InputField
+            inputId={"interest"}
+            inputLabel="What are you interested in?"
+            inputType="text"
+            placeholder="Fashion"
+            value={historySearch.interest}
+            handleInputChange={(e) =>
+              handleInputChange(e.target.value, "interest")
+            }
+            required
+          />
+          <button
+            type="submit"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full mt-3"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </Wrapper>
+  );
 }
 
 export default UserSelectForm;

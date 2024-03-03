@@ -6,12 +6,13 @@ import Footer from "./components/Footer";
 import History from "./components/pages/History";
 import UserSelectForm from "./components/pages/UserSelectForm";
 import UserContextProvider from "./context/UserContext";
+import ChatChatComponent from "./components/Chatgpt_API";
 
 function App() {
   return (
     <UserContextProvider>
       <Navbar />
-      <main className="flex column-reverse md:row">
+      <main className="flex flex-col-reverse md:flex-row">
         <AnimatedGlobe />
         <Routes>
           <Route index element={<SignIn />} />
