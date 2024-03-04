@@ -37,6 +37,7 @@ import Wrapper from "../Wrapper";
 import * as THREE from 'three';
 
 function AnimatedGlobe() {
+
  const mount = useRef(null); // Create a ref object
 
  useEffect(() => {
