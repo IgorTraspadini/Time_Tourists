@@ -69,11 +69,31 @@ it('Clicking button on Selection page with fields empty, keep on page', async ()
 
 });
 
+
+
 it('Clicking button on Selection page with fields not empty, move on to other page', async () => {
   render(<App />);
 
-  const dropdown = screen.getByTestId('dropdownwn');
-  expect(dropdown.value).to.equal('0');
+  await userEvent.type(
+    screen.getByLabelText('Where would you like to go?'),
+    "India"
+  );
+
+  await userEvent.type(
+    screen.getByLabelText('What are you interested in?'),
+    "History"
+  );
+
+  await userEvent.click(
+    screen.getByRole('button', { name: 'Spring' })
+  );
+
+  await userEvent.click(
+    screen.getByRole('button', { name: 'Search' })
+  );
+
+  const message = screen.getByText("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+  expect(message).toBeDefined();
   
 });
 
