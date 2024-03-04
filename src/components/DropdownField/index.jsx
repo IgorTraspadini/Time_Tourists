@@ -35,7 +35,7 @@ function DropdownField({
   }, [openDropdown]);
 
   return (
-    <div class="mb-4 flex flex-col mx-auto relative">
+    <div className="mb-4 flex flex-col mx-auto relative">
       <h4 className="text-gray-700 text-sm font-bold mb-2">{placeholder}</h4>
       <button
         id="dropdownDefaultButton"
