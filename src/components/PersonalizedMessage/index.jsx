@@ -1,7 +1,14 @@
 import React from "react";
 
+
 function PersonalizedMessage() {
-  return <div>Message</div>;
+  return (
+    <>
+      <div>
+        <p>Hi</p>
+      </div>
+    </>
+  )
 }
 
 export default PersonalizedMessage;

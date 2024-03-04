@@ -4,9 +4,11 @@ import PersonalizedMessage from "../PersonalizedMessage";
 import Wrapper from "../Wrapper";
 
 function History() {
+
   return (
     <Wrapper>
-      <PersonalizedMessage />
+      <PersonalizedMessage 
+      />
       <FactsandFigures />
     </Wrapper>
   );

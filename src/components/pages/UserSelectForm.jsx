@@ -1,17 +1,19 @@
 import React from "react";
 import Wrapper from "../Wrapper";
 import { useUserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 import InputField from "../InputField";
 import DropdownField from "../DropdownField";
 
 function UserSelectForm() {
-  const { user } = useUserContext();
-
+  const { user, setSelection } = useUserContext();
+  const navigate = useNavigate();
   const [historySearch, setHistorySearch] = React.useState({
-    location: "",
-    season: "",
+    where: "",
+    when: "",
     interest: "",
   });
+
 
   const handleInputChange = (value, key) => {
     setHistorySearch((previsonHistorySearch) => ({
@@ -22,13 +24,13 @@ function UserSelectForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     // check for empty fields, prevent submit if there are any empty fields
     if (Object.values(historySearch).some((field) => field === "")) {
       return;
     }
-
-    // send data
+    
+    setSelection(historySearch.where, historySearch.when, historySearch.interest);
+    navigate("../history");
   };
   return (
     <Wrapper>
@@ -41,13 +43,13 @@ function UserSelectForm() {
         </div>
         <div className="mx-auto w-4/5 mt-3">
           <InputField
-            inputId={"location"}
+            inputId={"where"}
             inputLabel="Where would you like to go?"
             inputType="text"
             placeholder="China"
             value={historySearch.location}
             handleInputChange={(e) =>
-              handleInputChange(e.target.value, "location")
+              handleInputChange(e.target.value, "where")
             }
             required
           />
@@ -55,7 +57,7 @@ function UserSelectForm() {
           <DropdownField
             currentOption={historySearch.season}
             dropdownOptions={["Summer", "Winter", "Spring", "Autumn"]}
-            selectOption={(option) => handleInputChange(option, "season")}
+            selectOption={(option) => handleInputChange(option, "when")}
             placeholder="When would you like to visit?"
             optionPlaceholder="Select a season"
           />

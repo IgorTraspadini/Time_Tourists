@@ -4,21 +4,21 @@ const UserContext = React.createContext();
 
 function UserContextProvider({ children }) {
   const [currentUserDetails, setCurrentUserDetails] = useState(null);
-  const [histories, setHistories] = useState([]);
+  const [currentUserSelection, setCurrentUserSelection] = useState(null);
 
-  const setUserDetails = (name, email) =>
+  const setUserDetails = (name, email) => {
     setCurrentUserDetails({ name, email });
-
-  const getUserSelectedHistory = async (place, year, interest) => {
-    // api call here
+  }
+  const setUserSelection = (where, when, interest) => {
+    setCurrentUserSelection({where, when, interest});
   };
   return (
     <UserContext.Provider
       value={{
         user: currentUserDetails,
         setUser: setUserDetails,
-        userHistories: histories,
-        getHistory: getUserSelectedHistory,
+        setSelection: setUserSelection,
+        selection: currentUserSelection,
       }}
     >
       {children}

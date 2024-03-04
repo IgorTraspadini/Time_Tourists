@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import History from "./components/pages/History";
 import UserSelectForm from "./components/pages/UserSelectForm";
 import UserContextProvider from "./context/UserContext";
-import ChatChatComponent from "../src/components/Chatgpt_API/index.jsx";
 
 function App() {
   return (
