@@ -12,9 +12,8 @@ function App() {
   return (
     <UserContextProvider>
       <Navbar />
-      <main className="flex column-reverse md:row">
+      <main className="flex flex-col-reverse md:flex-row">
         <AnimatedGlobe />
-        <ChatChatComponent where="China" when="Spring" interested="Music"/>
         <Routes>
           <Route index element={<SignIn />} />
           <Route path="history" element={<History />} />
