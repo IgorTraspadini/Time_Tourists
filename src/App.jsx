@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
 import Navbar from "./components/Navbar";
 import AnimatedGlobe from '../src/components/AnimatedGlobe/index.jsx';
 import SignIn from "./components/SignIn";
@@ -9,10 +10,11 @@ import UserContextProvider from "./context/UserContext";
 
 function App() {
   return (
+    <React.StrictMode>
+    <BrowserRouter>
     <UserContextProvider>
       <Navbar />
       <main className="flex flex-col-reverse md:flex-row">
-        <AnimatedGlobe />
         <Routes>
           <Route index element={<SignIn />} />
           <Route path="history" element={<History />} />
@@ -21,6 +23,8 @@ function App() {
       </main>
       <Footer />
     </UserContextProvider>
+    </BrowserRouter>
+  </React.StrictMode>
   );
 }
 
