@@ -9,13 +9,17 @@ function History() {
 
   return (
     <Wrapper>
-      <PersonalizedMessage 
-      name={user.name} 
-      place={selection.where} 
-      season={selection.when} 
-      interest={selection.interest} 
+      <PersonalizedMessage
+        name={user.name}
+        place={selection.where}
+        season={selection.when}
+        interest={selection.interest}
       />
-      <FactsandFigures />
+      <FactsandFigures
+        place={selection.where}
+        season={selection.when}
+        interest={selection.interest}
+      />
     </Wrapper>
   );
 }
