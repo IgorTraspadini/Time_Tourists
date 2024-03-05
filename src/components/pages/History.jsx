@@ -5,7 +5,8 @@ import Wrapper from "../Wrapper";
 import { useUserContext } from "../../context/UserContext";
 
 function History() {
-  const { user, selection } = useUserContext();
+  const selection = useUserContext();
+  const user = useUserContext();
 
   return (
     <Wrapper className="bg-creamy-yellow p-4 min-h-screen">
