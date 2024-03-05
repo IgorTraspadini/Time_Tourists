@@ -37,7 +37,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 picture
 
 ## Design draft
-picture
+<img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/ffa9f126-ce65-4b9d-b307-502a66421201" width="500px">
+<img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/79982c73-3b16-45b2-a124-cb0e61673351" width="500px">
+<img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/7de6d0cb-4c83-46e0-9696-1922f64d5ccd">
 
 ## References 
 - [React.js](https://react.dev/)
