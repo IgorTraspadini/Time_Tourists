@@ -7,7 +7,7 @@ function ChatComponent(props) {
   const [response, setResponse] = useState("");
   // Set the firstTime variable using "useRef" to track the first render of the object
   const firstTime = useRef(true);
-  const { user } = useUserContext();
+  const user = useUserContext();
 
   useEffect(() => {
     // Check if is the initial page render to avoid calling API on every re-render

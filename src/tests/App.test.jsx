@@ -1,6 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
+import PersonalizedMessage from '../components/PersonalizedMessage';
+import FactsandFigures from '../components/FactsAndFigures';
+import ChatComponent from '../components/Chatgpt_API';
 
 // Test 1: Write a test that checks to see if our `App` component renders without throwing an error.
 it('App Component Renders Without Error', () => {
@@ -56,6 +59,7 @@ it('Clicking button on Signin page with fields not empty, move on to selection p
 
 });
 
+
 it('Clicking button on Selection page with fields empty, keep on page', async () => {
   render(<App />);
 
@@ -68,7 +72,6 @@ it('Clicking button on Selection page with fields empty, keep on page', async ()
   expect(inputField).toBeDefined();
 
 });
-
 
 
 it('Clicking button on Selection page with fields not empty, move on to other page', async () => {
@@ -92,8 +95,47 @@ it('Clicking button on Selection page with fields not empty, move on to other pa
     screen.getByRole('button', { name: 'Search' })
   );
 
-  const message = screen.getByText("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+  const message = screen.getByText("Here's an intinerary of things you should see, based on");
   expect(message).toBeDefined();
   
 });
+
+it('Test PersonalizedMessage component', () => {
+  render(<PersonalizedMessage
+    place="China"
+    season="Spring"
+    interest="Music"
+    name="John"
+  />);
+
+  const message = screen.getByText("Hi John, you're going to China in Spring!");
+
+  expect(message).toBeDefined();
+
+});
+
+
+it('Test FactsandFigures component', () => {
+  render(<FactsandFigures
+    place="China"
+    season="Spring"
+    interest="Music"
+  />);
+
+  const message = screen.getByText("Your top picks");
+
+  expect(message).toBeDefined();
+
+});
+
+it('Test ChatComponent component', async () => {
+  render(<ChatComponent
+    where="China"
+    when="Spring"
+    interest="Music"
+  />);
+
+});
+
+
 
