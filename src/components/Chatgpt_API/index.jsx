@@ -19,7 +19,7 @@ function ChatComponent(props) {
     // Create a openai object to call the API
     const openai = new OpenAI({
       // Store the API token on the .env file to prevet exposing it in the GitHub
-      apiKey: "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",
+      apiKey: import.meta.env.VITE_OPENAI_API_KEY,
       // using just in case of SSR or something else goes wrong
       dangerouslyAllowBrowser: true,
     });
@@ -62,9 +62,9 @@ function ChatComponent(props) {
   return (
     <>
       <div className="p-4 my-4 bg-light-blue rounded-lg shadow-lg">
-      <div className="text-dark-green font-semibold mb-2">{personalizedTitle}</div>
-      <div className="text-dark-yellow">{response}</div>
-    </div>
+        <div className="text-dark-green font-semibold mb-2">{personalizedTitle}</div>
+        <div className="text-dark-yellow">{response}</div>
+      </div>
     </>
   );
 }
