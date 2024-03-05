@@ -8,7 +8,8 @@ function History() {
   const { user, selection } = useUserContext();
 
   return (
-    <Wrapper>
+    <Wrapper className="bg-light-blue p-4 min-h-screen">
+      <div className="max-w-4xl mx-auto">
       <PersonalizedMessage
         name={user.name}
         place={selection.where}
@@ -20,6 +21,7 @@ function History() {
         season={selection.when}
         interest={selection.interest}
       />
+      </div>
     </Wrapper>
   );
 }
