@@ -62,7 +62,7 @@ picture
 To performing the project TDD/BDD was used the libraries Vitest & React Testing Library, with the configurations shows bellow.
 
 ```javascript
-# vite.config.js 
+// vite.config.js file 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -77,7 +77,7 @@ export default defineConfig({
   envDir: './src/envs'
 })
 
-# setup.js
+// setup.js file
 import { expect, afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import * as matchers from '@testing-library/jest-dom/matchers';
@@ -86,18 +86,19 @@ afterEach(() => {
     cleanup();
 });
 
-# .eslintrc.cjs
+// .eslintrc.cjs file
   env: { browser: true, es2020: true, vitest: true },
 
-# package.json
+// package.json file
 # scripts:
     "test": "vitest",
-#devDependencies:
+# devDependencies:
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
     "jsdom": "^24.0.0",
     "vitest": "^1.3.1"
 ```
+Test result>>>>>>>>>>
 ![test_proj_2](https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/c79cc169-6cd5-437d-83b8-fe0ffd70f174)
 
 ## Credits
