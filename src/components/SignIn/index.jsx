@@ -23,22 +23,23 @@ function SignIn() {
     e.preventDefault();
 
     setUser(userDetails.name, userDetails.email);
-    navigate("select-history");
+    navigate("/select-history"); // Ensure the path is correct
   };
+
   return (
-    <Wrapper className="bg-light-blue">
+    <Wrapper className="bg-mint-green">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center p-4 border rounded border-dark-green shadow-md bg-white"
+        className="flex flex-col justify-center items-center p-4 border rounded border-lavender shadow-md bg-white"
       >
         <div className="text-center mb-4">
-          <h1 className="text-3xl font-bold mb-1 text-dark-green">Welcome to Time Tourists</h1>
+          <h1 className="text-3xl font-bold mb-1 text-muted-purple">Welcome to Time Tourists</h1>
           <p className="text-base text-gray-700">Enter your details to start exploring</p>
         </div>
 
         <div className="mx-auto w-4/5 mt-3">
           <InputField
-            inputId={"name"}
+            inputId="name"
             inputLabel="Enter your name"
             inputType="text"
             placeholder="John Doe"
@@ -48,7 +49,7 @@ function SignIn() {
           />
 
           <InputField
-            inputId={"email"}
+            inputId="email"
             inputLabel="Enter your email"
             inputType="email"
             placeholder="john@example.com"
@@ -60,7 +61,7 @@ function SignIn() {
           />
           <button
             type="submit"
-            className="bg-dark-yellow hover:bg-bright-blue focus:ring-4 focus:ring-dark-yellow text-white font-medium rounded-lg text-sm px-5 py-2.5 mt-4 w-full transition-colors duration-200"
+            className="bg-soft-pink hover:bg-lavender focus:ring-4 focus:ring-soft-pink text-white font-medium rounded-lg text-sm px-5 py-2.5 mt-4 w-full transition-colors duration-200"
           >
             Enter
           </button>
