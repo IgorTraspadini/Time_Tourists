@@ -11,21 +11,19 @@ import UserContextProvider from "./context/UserContext";
 
 function App() {
   return (
-    <React.StrictMode>
     <BrowserRouter>
-    <UserContextProvider>
-      <Navbar />
-      <main className="flex flex-col-reverse md:flex-row">
-        <Routes>
-          <Route index element={<SignIn />} />
-          <Route path="history" element={<History />} />
-          <Route path="select-history" element={<UserSelectForm />} />
-        </Routes>
-      </main>
-      <Footer />
-    </UserContextProvider>
+      <UserContextProvider>
+        <Navbar />
+        <main className="flex flex-col-reverse md:flex-row">
+          <Routes>
+            <Route path="/" element={<SignIn />} />
+            <Route path="history" element={<History />} />
+            <Route path="select-history" element={<UserSelectForm />} />
+          </Routes>
+        </main>
+        <Footer />
+      </UserContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
   );
 }
 
