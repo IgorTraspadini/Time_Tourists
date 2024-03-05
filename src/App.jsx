@@ -14,8 +14,9 @@ function App() {
     <React.StrictMode>
     <BrowserRouter>
     <UserContextProvider>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex flex-col-reverse md:flex-row">
+      <main className="flex flex-col flex-grow">
         <Routes>
           <Route index element={<SignIn />} />
           <Route path="history" element={<History />} />
@@ -23,6 +24,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      </div>
     </UserContextProvider>
     </BrowserRouter>
   </React.StrictMode>
