@@ -19,7 +19,7 @@ function ChatComponent(props) {
     // Create a openai object to call the API
     const openai = new OpenAI({
       // Store the API token on the .env file to prevet exposing it in the GitHub
-      apiKey: "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",
+      apiKey: "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",
       // using just in case of SSR or something else goes wrong
       dangerouslyAllowBrowser: true,
     });
