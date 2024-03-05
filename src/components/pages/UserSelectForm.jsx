@@ -14,7 +14,6 @@ function UserSelectForm() {
     interest: "",
   });
 
-
   const handleInputChange = (value, key) => {
     setHistorySearch((previsonHistorySearch) => ({
       ...previsonHistorySearch,
@@ -28,9 +27,13 @@ function UserSelectForm() {
     if (Object.values(historySearch).some((field) => field === "")) {
       return;
     }
-    
-    setSelection(historySearch.where, historySearch.when, historySearch.interest);
-    navigate("../history");
+
+    setSelection(
+      historySearch.where,
+      historySearch.when,
+      historySearch.interest
+    );
+    navigate("/history");
   };
   return (
     <Wrapper className="bg-light-blue">
@@ -39,7 +42,11 @@ function UserSelectForm() {
         className="flex h-full justify-center flex-col items-center p-3 border rounded border-light-blue shadow-md bg-white"
       >
         <div className="text-center mb-4">
-          {user && <h1 className="text-dark-green text-3xl font-bold mb-1">Hi, {user.name}</h1>}
+          {user && (
+            <h1 className="text-dark-green text-3xl font-bold mb-1">
+              Hi, {user.name}
+            </h1>
+          )}
         </div>
         <div className="mx-auto w-4/5 mt-3">
           <InputField
@@ -55,7 +62,7 @@ function UserSelectForm() {
           />
 
           <DropdownField
-            currentOption={historySearch.season}
+            currentOption={historySearch.when}
             dropdownOptions={["Summer", "Winter", "Spring", "Autumn"]}
             selectOption={(option) => handleInputChange(option, "when")}
             placeholder="When would you like to visit?"
