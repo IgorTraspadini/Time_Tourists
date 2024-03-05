@@ -32,51 +32,51 @@ function DropdownField({
         handleCloseDropdownWhenNonDropdownItemIsClicked
       );
     }
-  }, [openDropdown]);
+  }, [openDropdown, handleCloseDropdownWhenNonDropdownItemIsClicked]);
 
   return (
     <div className="mb-4 flex flex-col mx-auto relative">
-      <h4 className="text-dark-green text-sm font-bold mb-2">{placeholder}</h4>
+      <h4 className="text-black text-sm font-bold mb-2">{placeholder}</h4>
       <button
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
-        className="text-white bg-dark-green hover:bg-dark-green focus:ring-4 focus:outline-none focus:ring-light-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between"
+        className="text-white bg-muted-purple hover:bg-lavender focus:ring-4 focus:outline-none focus:ring-lavender font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between"
         type="button"
         onClick={() => setOpenDropdown((prev) => !prev)}
         data-dropdown-item="true"
       >
         <span>{currentOption || optionPlaceholder}</span>
         <svg
-          className="w-2.5 h-2.5 ms-3"
+          className="ml-2 w-4 h-4"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          viewBox="0 0 10 6"
+          viewBox="0 0 20 20"
         >
           <path
             stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
-            d="m1 1 4 4 4-4"
+            strokeWidth="1.5"
+            d="M6 8l4 4 4-4"
           />
         </svg>
       </button>
       <div
         id="dropdown"
-        className={`z-10 rounded-lg shadow w-full absolute top-full mt-1 bg-light-blue ${
+        className={`z-10 rounded-lg shadow w-full absolute top-full mt-1 bg-creamy-yellow ${
           !openDropdown && "hidden"
         }`}
       >
         <ul
-          className="py-1 text-sm text-dark-green"
+          className="py-1 text-sm text-muted-purple"
           aria-labelledby="dropdownDefaultButton"
         >
           {dropdownOptions.map((option) => (
             <li key={option} className="w-full" data-dropdown-item="true">
               <button
                 type="button"
-                className="block px-4 py-2 hover:bg-dark-green hover:text-white w-full text-left"
+                className="block px-4 py-2 hover:bg-lavender hover:text-white w-full text-left"
                 onClick={() => {
                   selectOption(option);
                   setOpenDropdown(false);
