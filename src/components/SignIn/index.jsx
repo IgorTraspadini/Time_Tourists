@@ -26,14 +26,14 @@ function SignIn() {
     navigate("select-history");
   };
   return (
-    <Wrapper>
+    <Wrapper className="bg-light-blue">
       <form
         onSubmit={handleSubmit}
-        className="flex h-full justify-center flex-col justify-items-center p-3 border rounded border-sky-300"
+        className="flex flex-col justify-center items-center p-4 border rounded border-dark-green shadow-md bg-white"
       >
         <div className="text-center mb-4">
-          <h1 className="text-4xl font-bold mb-1">Welcome to Time Tourists</h1>
-          <p className="text-base">Enter your details to start exploring</p>
+          <h1 className="text-3xl font-bold mb-1 text-dark-green">Welcome to Time Tourists</h1>
+          <p className="text-base text-gray-700">Enter your details to start exploring</p>
         </div>
 
         <div className="mx-auto w-4/5 mt-3">
@@ -60,7 +60,7 @@ function SignIn() {
           />
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full mt-3"
+            className="bg-dark-yellow hover:bg-bright-blue focus:ring-4 focus:ring-dark-yellow text-white font-medium rounded-lg text-sm px-5 py-2.5 mt-4 w-full transition-colors duration-200"
           >
             Enter
           </button>
