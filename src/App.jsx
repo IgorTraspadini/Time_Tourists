@@ -20,7 +20,9 @@ function App() {
             <Route path="history" element={<History />} />
             <Route path="select-history" element={<UserSelectForm />} />
           </Routes>
+          <AnimatedGlobe/>
         </main>
+        
         <Footer />
       </UserContextProvider>
     </BrowserRouter>
