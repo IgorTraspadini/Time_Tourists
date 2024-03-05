@@ -33,13 +33,13 @@ function UserSelectForm() {
     navigate("../history");
   };
   return (
-    <Wrapper>
+    <Wrapper className="bg-light-blue">
       <form
         onSubmit={handleSubmit}
-        className="flex h-full justify-center flex-col justify-items-center p-3 border rounded border-sky-300"
+        className="flex h-full justify-center flex-col items-center p-3 border rounded border-light-blue shadow-md bg-white"
       >
         <div className="text-center mb-4">
-          {user && <h1 className="text-3xl font-bold mb-1">Hi, {user.name}</h1>}
+          {user && <h1 className="text-dark-green text-3xl font-bold mb-1">Hi, {user.name}</h1>}
         </div>
         <div className="mx-auto w-4/5 mt-3">
           <InputField
@@ -75,7 +75,7 @@ function UserSelectForm() {
           />
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full mt-3"
+            className="text-white bg-dark-green hover:bg-bright-blue focus:ring-4 focus:outline-none focus:ring-bright-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mt-3 transition-colors duration-200"
           >
             Search
           </button>
