@@ -41,6 +41,9 @@ function AnimatedGlobe() {
  const mount = useRef(null); // Create a ref object
 
  useEffect(() => {
+    const width = mount.current.clientWidth; // Get the width of the container
+    const height = mount.current.clientHeight; // Get the height of the container
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
@@ -48,10 +51,14 @@ function AnimatedGlobe() {
 
 
     // Set the size of the renderer and append it to the mount point
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // renderer.setSize(window.innerWidth, window.innerHeight);
+    // mount.current.appendChild(renderer.domElement);
+    renderer.setSize(width, height);
     mount.current.appendChild(renderer.domElement);
+
     const light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
     scene.add(light);
+
     // Create a sphere
     const sphere = new THREE.Mesh(
       new THREE.SphereGeometry(5, 50, 50),
@@ -79,7 +86,7 @@ function AnimatedGlobe() {
  }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
 
 
- return <Wrapper ref={mount}>AnimatedGlobe</Wrapper>;
+ return <Wrapper className="animated-globe-wrapper p-0" ref={mount}></Wrapper>;
 }
 
 export default AnimatedGlobe;
