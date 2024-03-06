@@ -17,6 +17,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.animated-globe-wrapper {
+  padding: 0 !important;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

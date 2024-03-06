@@ -86,7 +86,7 @@ function AnimatedGlobe() {
  }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
 
 
- return <Wrapper ref={mount}></Wrapper>;
+ return <Wrapper className="animated-globe-wrapper p-0" ref={mount}></Wrapper>;
 }
 
 export default AnimatedGlobe;
