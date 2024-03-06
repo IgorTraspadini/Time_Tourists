@@ -20,12 +20,12 @@ function ChatComponent(props) {
 
     async function getOpenAIResponse() {
       const prompt =
-        "What are the itinerary of things related to" +
+        "What are the itinerary of places related to" +
         props.interested +
-        "that I must see in " +
-        props.where +
         " on " +
         props.when +
+        "that I must see in " +
+        props.where +
         'in a very summarised way no longer than 130 tokens using bullet points style "->"';
       const chatCompletion = await openai.chat.completions.create({
         messages: [{ role: "user", content: prompt }],
