@@ -5,7 +5,7 @@ import { useUserContext } from "../../context/UserContext";
 function ChatComponent(props) {
   const [response, setResponse] = useState("");
   const firstTime = useRef(true);
-  const user = useUserContext();
+  const { user } = useUserContext();
 
   useEffect(() => {
     if (firstTime.current) {
