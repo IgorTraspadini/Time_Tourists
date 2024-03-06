@@ -143,7 +143,7 @@ function AnimatedGlobe() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      sphere.rotation.y += 0.01;
+      sphere.rotation.y += 0.003;
       renderer.render(scene, camera);
     };
 
