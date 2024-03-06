@@ -120,9 +120,12 @@ function AnimatedGlobe() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer(
+      {antialias: true //makes edges smoother/ not pixelised
+      });
 
     renderer.setSize(width, height);
+    renderer.setPixelRatio(window.devicePixelRatio)// make the graphics sharper
     mount.current.appendChild(renderer.domElement);
 
     const light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
