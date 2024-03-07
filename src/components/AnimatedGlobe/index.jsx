@@ -13,7 +13,7 @@
 //     const scene = new THREE.Scene();
 //     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 //     const renderer = new THREE.WebGLRenderer();
- 
+
 //     renderer.setSize(width, height);
 //     mount.current.appendChild(renderer.domElement);
 
@@ -46,7 +46,6 @@
 //     };
 //  }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
 
-
 //  return <Wrapper className="animated-globe-wrapper p-0" ref={mount}></Wrapper>;
 // }
 
@@ -64,7 +63,6 @@
 //     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 //     const renderer = new THREE.WebGLRenderer();
 
-
 //     // Set the size of the renderer and append it to the mount point
 //     const wrapperWidth = mount.current.clientWidth; // Get the width of the Wrapper component
 //     const wrapperHeight = mount.current.clientHeight; // Get the height of the Wrapper component
@@ -77,7 +75,7 @@
 //     // Create a sphere
 //     const sphere = new THREE.Mesh(
 //       new THREE.SphereGeometry(5, 50, 50),
-//       new THREE.MeshBasicMaterial({ 
+//       new THREE.MeshBasicMaterial({
 //         map: new THREE.TextureLoader().load("../")
 //        }) //specifing the map component to render image
 //     );
@@ -109,7 +107,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Wrapper from "../Wrapper";
-import * as THREE from 'three';
+import * as THREE from "three";
 
 function AnimatedGlobe() {
   const mount = useRef(null); // Create a ref object
@@ -120,12 +118,12 @@ function AnimatedGlobe() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer(
-      {antialias: true //makes edges smoother/ not pixelised
-      });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true, //makes edges smoother/ not pixelised
+    });
 
     renderer.setSize(width, height);
-    renderer.setPixelRatio(window.devicePixelRatio)// make the graphics sharper
+    renderer.setPixelRatio(window.devicePixelRatio); // make the graphics sharper
     mount.current.appendChild(renderer.domElement);
 
     const light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
@@ -135,7 +133,9 @@ function AnimatedGlobe() {
     const sphereRadius = Math.min(width, height) * 0.2; // calculates the sphere's radius based on the minimum of the container's width and height
     const sphere = new THREE.Mesh(
       new THREE.SphereGeometry(sphereRadius, 50, 50),
-      new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./Animate-Globe.jpg') })
+      new THREE.MeshBasicMaterial({
+        map: new THREE.TextureLoader().load("./Animate-Globe.jpg"),
+      })
     );
     scene.add(sphere);
 
@@ -153,7 +153,6 @@ function AnimatedGlobe() {
     animate();
     //Add an eventListener for mouse interaction with Earth
     // Translate mouse coordinates from the webspace to  3D space
-   
 
     // addEventListener('mousemove', (event) => {
     //   mouse.x = (event.clientX / innerWidth) * 2 - 1;
@@ -161,19 +160,18 @@ function AnimatedGlobe() {
     // });
     const mouse = {
       x: undefined, //just testing
-      y: undefined// just testing
-    }
+      y: undefined, // just testing
+    };
     const handleMouseMove = (event) => {
-
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / window.innerHeight) * 2 - 1;
     };
-  
-    // Add event listener when the component mounts
-    window.addEventListener('mousemove', handleMouseMove);
 
-    console.log(handleMouseMove, "testing mouse coordinates")
-    
+    // Add event listener when the component mounts
+    window.addEventListener("mousemove", handleMouseMove);
+
+    console.log(handleMouseMove, "testing mouse coordinates");
+
     // Handle window resize
     const handleResize = () => {
       const newWidth = mount.current.clientWidth;
@@ -186,12 +184,12 @@ function AnimatedGlobe() {
     };
 
     // Attach event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Cleanup function to remove the renderer and event listener when the component unmounts
     return () => {
-      window.removeEventListener('resize', handleResize);
-      mount.current.removeChild(renderer.domElement);
+      window.removeEventListener("resize", handleResize);
+      mount.current?.removeChild(renderer.domElement);
     };
   }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
 
