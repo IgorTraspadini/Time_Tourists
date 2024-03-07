@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { useState, useEffect, useRef } from "react";
 import { useUserContext } from "../../context/UserContext";
+import { addToLocalStorage } from "../../assets/js/add_return_ItemToLocalStorage.js";
 
 function ChatComponent(props) {
   const [response, setResponse] = useState("");
@@ -20,7 +21,7 @@ function ChatComponent(props) {
 
     async function getOpenAIResponse() {
       const prompt =
-        "What are the itinerary of places related to" +
+        "What are the itinerary of things related to" +
         props.interested +
         " on " +
         props.when +
@@ -38,8 +39,20 @@ function ChatComponent(props) {
         .map((v, i) => (i > 0 ? <p key={"A" + i} className="text-muted-purple my-1">- {v}</p> : null));
 
       setResponse(output);
+
+      // save information to the local storage
+      const Obj = {
+        user: user.name,
+        email: user.email,
+        place: props.where,
+        period: props.when,
+        interest: props.interest,
+        response: output
+      }
+      addToLocalStorage("search", Obj)
     }
 
+    // Prevent the API to be call on the first rennder of the component
     if (!response) {
       getOpenAIResponse();
     }
