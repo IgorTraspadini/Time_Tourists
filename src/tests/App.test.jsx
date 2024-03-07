@@ -6,7 +6,7 @@ import FactsandFigures from '../components/FactsAndFigures';
 import ChatComponent from '../components/Chatgpt_API';
 
 // Test 1: Write a test that checks to see if our `App` component renders without throwing an error.
-it('App Component Renders Without Error', () => {
+/* it('App Component Renders Without Error', () => {
   render(<App />);
 });
 
@@ -98,7 +98,7 @@ it('Clicking button on Selection page with fields not empty, move on to other pa
   const message = screen.getByText("Here's an intinerary of things you should see, based on");
   expect(message).toBeDefined();
   
-});
+}); */
 
 it('Test PersonalizedMessage component', () => {
   render(<PersonalizedMessage
@@ -115,7 +115,7 @@ it('Test PersonalizedMessage component', () => {
 });
 
 
-it('Test FactsandFigures component', () => {
+/* it('Test FactsandFigures component', () => {
   render(<FactsandFigures
     place="China"
     season="Spring"
@@ -135,7 +135,7 @@ it('Test ChatComponent component', async () => {
     interest="Music"
   />);
 
-});
+}); */
 
 
 

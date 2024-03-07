@@ -4,15 +4,16 @@ import Navbar from "./components/Navbar";
 import AnimatedGlobe from "../src/components/AnimatedGlobe/index.jsx";
 import SignIn from "./components/SignIn";
 import Footer from "./components/Footer";
+import Search from "./components/pages/Search";
 import History from "./components/pages/History";
 import About from "./components/pages/about.jsx";
 import UserSelectForm from "./components/pages/UserSelectForm";
 import UserContextProvider from "./context/UserContext";
-import Sources from "./components/pages/sources.jsx";
 import Contact from "./components/pages/contact.jsx";
 
 function App() {
   const AnimatedGlobeRoutes = ['/', '/select-history', '/history'];
+  const AnimatedGlobeRoutes = ["/", "/select-history", "/search"];
   const { pathname } = useLocation();
 
   return (
