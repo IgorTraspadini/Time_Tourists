@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import AnimatedGlobe from "../src/components/AnimatedGlobe/index.jsx";
 import SignIn from "./components/SignIn";
 import Footer from "./components/Footer";
+import Search from "./components/pages/Search";
 import History from "./components/pages/History";
 import About from "./components/pages/about.jsx";
 import UserSelectForm from "./components/pages/UserSelectForm";
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="history" element={<History />} />
+          <Route path="search" element={<Search />} />            
           <Route path="select-history" element={<UserSelectForm />} />
           <Route path="about" element={<About />} />
           <Route path="sources" element={<Sources />} />
@@ -30,7 +32,7 @@ function App() {
         {AnimatedGlobeRoutes.includes(pathname) && <AnimatedGlobe />}
       </main>
 
-      <Footer />
+     <Footer />
     </UserContextProvider>
   );
 }

@@ -44,6 +44,13 @@ function Navbar() {
 
         {/* Links container, hidden on mobile and expanded on md screens and larger */}
         <div className="hidden md:flex items-center space-x-4">
+           
+          <Link
+            to="/history"
+            className="text-white hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
+          >
+            History
+          </Link>
           <Link
             to="/about"
             className="text-white hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
@@ -62,6 +69,7 @@ function Navbar() {
           >
             Contact
           </Link>
+
           {user && (
             <span className="text-white text-sm pl-4">
               Welcome, {user.name}

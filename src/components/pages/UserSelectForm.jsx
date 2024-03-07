@@ -28,12 +28,8 @@ function UserSelectForm() {
       return;
     }
 
-    setSelection(
-      historySearch.where,
-      historySearch.when,
-      historySearch.interest
-    );
-    navigate("/history"); // Ensure the navigate path is correct
+    setSelection(historySearch.where, historySearch.when, historySearch.interest);
+    navigate("/search"); // Ensure the navigate path is correct
   };
 
   return (
