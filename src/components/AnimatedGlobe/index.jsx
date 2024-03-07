@@ -146,23 +146,34 @@ function AnimatedGlobe() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      sphere.rotation.y += 0.003;
+      sphere.rotation.y += 0.001;
       renderer.render(scene, camera);
     };
 
     animate();
     //Add an eventListener for mouse interaction with Earth
     // Translate mouse coordinates from the webspace to  3D space
+   
+
+    // addEventListener('mousemove', (event) => {
+    //   mouse.x = (event.clientX / innerWidth) * 2 - 1;
+    //   mouse.y = -(event.clientY / innerHeight) * 2 - 1;
+    // });
     const mouse = {
       x: undefined, //just testing
       y: undefined// just testing
     }
+    const handleMouseMove = (event) => {
 
-    addEventListener('mousemove', (event) => {
-      mouse.x = (event.clientX / innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / innerHeight) * 2 - 1;
-    });
-    console.log(mouse)
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 - 1;
+    };
+  
+    // Add event listener when the component mounts
+    window.addEventListener('mousemove', handleMouseMove);
+
+    console.log(handleMouseMove, "testing mouse coordinates")
+    
     // Handle window resize
     const handleResize = () => {
       const newWidth = mount.current.clientWidth;

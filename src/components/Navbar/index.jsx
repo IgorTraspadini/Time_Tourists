@@ -59,7 +59,7 @@ function Navbar() {
               </div>
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender">About</a>
+              <a href="./about.html" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender">About</a>
               <a href="/services" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender">Services</a>
               <a href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender">Contact</a>
             </div>
