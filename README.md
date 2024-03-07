@@ -1,8 +1,8 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/36b825a9-4c3e-48cd-99c7-047eaea484a7/deploy-status)](https://app.netlify.com/sites/time-tourists/deploys)
 # Time Tourists
 
 ## Description
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+A unique application designed to take the user back in time and learn more about the history of their selected country. With Time Travelers, user can input their name and email, select a time period, and country they want to travel back to, and save their search in their history. It's an exciting project that combines our passion for technology and inovation with our ambition for easily accessible aducation resources.
 
 ## Table of Contents
 * [Features](#functionality-features)
