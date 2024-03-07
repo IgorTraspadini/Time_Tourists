@@ -30,7 +30,7 @@ function UserSelectForm() {
     }
 
     setSelection(historySearch.where, historySearch.when, historySearch.interest);
-    navigate("/history"); // Ensure the navigate path is correct
+    navigate("/search"); // Ensure the navigate path is correct
   };
 
   return (
