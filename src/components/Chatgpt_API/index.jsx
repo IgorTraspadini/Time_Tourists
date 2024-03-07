@@ -20,7 +20,7 @@ function ChatComponent(props) {
 
     async function getOpenAIResponse() {
       const prompt =
-        "What are the itinerary of places related to" +
+        "What are the itinerary of things related to" +
         props.interested +
         " on " +
         props.when +
