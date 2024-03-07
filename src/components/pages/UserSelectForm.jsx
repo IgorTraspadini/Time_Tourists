@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import InputField from "../InputField";
 import DropdownField from "../DropdownField";
 
-
 function UserSelectForm() {
   const { user, setSelection } = useUserContext();
   const navigate = useNavigate();
@@ -29,7 +28,11 @@ function UserSelectForm() {
       return;
     }
 
-    setSelection(historySearch.where, historySearch.when, historySearch.interest);
+    setSelection(
+      historySearch.where,
+      historySearch.when,
+      historySearch.interest
+    );
     navigate("/history"); // Ensure the navigate path is correct
   };
 
@@ -40,7 +43,11 @@ function UserSelectForm() {
         className="flex h-full justify-center flex-col items-center p-3 border rounded border-lavender shadow-md bg-white"
       >
         <div className="text-center mb-4">
-          {user && <h1 className="text-muted-purple text-3xl font-bold mb-1">Hi, {user.name}</h1>}
+          {user && (
+            <h1 className="text-muted-purple text-3xl font-bold mb-1">
+              Hi, {user.name}
+            </h1>
+          )}
         </div>
         <div className="mx-auto w-4/5 mt-3">
           <InputField
@@ -49,19 +56,23 @@ function UserSelectForm() {
             inputType="text"
             placeholder="China"
             value={historySearch.where}
-            handleInputChange={(e) => handleInputChange(e.target.value, "where")}
+            handleInputChange={(e) =>
+              handleInputChange(e.target.value, "where")
+            }
             required
           />
 
           <DropdownField
             currentOption={historySearch.when}
-            dropdownOptions={["Stone Age: 3.3 million to 5,000 years ago",
+            dropdownOptions={[
+              "Stone Age: 3.3 million to 5,000 years ago",
               "Bronze Age: 5,000 to 1,400 years ago (1,200 BC)",
               "Iron Age: 1,200 BC to 500 BC",
               "Classical Era: 500 BC to 500 AD",
               "Medieval Era: 500 AD to 1500 AD",
               "Early Modern Era: 1500 AD to 1800 AD",
-              "Modern Era: 1800 AD to present"]}
+              "Modern Era: 1800 AD to present",
+            ]}
             selectOption={(option) => handleInputChange(option, "when")}
             placeholder="Related with period?"
             optionPlaceholder="Select a season"
@@ -73,7 +84,9 @@ function UserSelectForm() {
             inputType="text"
             placeholder="Fashion"
             value={historySearch.interest}
-            handleInputChange={(e) => handleInputChange(e.target.value, "interest")}
+            handleInputChange={(e) =>
+              handleInputChange(e.target.value, "interest")
+            }
             required
           />
           <button
