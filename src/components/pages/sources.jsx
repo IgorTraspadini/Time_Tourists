@@ -1,12 +1,15 @@
 import React from "react";
-import myImage from "/teamwork.jpg"
+import ChatGPTImg from "/teamwork.jpg"
 
 function Sources() {
+    const websiteUrl = "https://openai.com/blog/introducing-chatgpt-and-whisper-apis";
     return (
       <div className="about-container">
         <header>
-          <img src={mySources} alt="My Sources" className="sources-image" />
-          <h1>About us page </h1>
+          <h1>Sources </h1>
+          <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+          <img src={ChatGPTImg} alt="ChatGPT logo" className="sources-image" />
+          </a>
         </header>
         
       </div>

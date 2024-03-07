@@ -8,6 +8,8 @@ import History from "./components/pages/History";
 import About from "./components/pages/about.jsx"
 import UserSelectForm from "./components/pages/UserSelectForm";
 import UserContextProvider from "./context/UserContext";
+import Sources from "./components/pages/sources.jsx"
+import Contact from "./components/pages/contact.jsx"
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
             <Route path="history" element={<History />} />
             <Route path="select-history" element={<UserSelectForm />} />
             <Route path="about" element={<About/>} />
+            <Route path="sources" element={<Sources/>} />
+            <Route path="contact" element={<Contact/>} />
+
           </Routes>
           <AnimatedGlobe />
           
