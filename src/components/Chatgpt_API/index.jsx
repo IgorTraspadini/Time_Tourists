@@ -18,6 +18,7 @@ function ChatComponent(props) {
       apiKey: import.meta.env.VITE_APP_GREETING,
       dangerouslyAllowBrowser: true,
     });
+    console.log(import.meta.env.VITE_APP_GREETING)
 
     async function getOpenAIResponse() {
       const prompt =
