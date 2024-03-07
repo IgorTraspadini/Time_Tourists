@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import logo from '../../assets/images/logo.png';
 
 function Navbar() {
   const { user } = useUserContext();
@@ -10,7 +11,7 @@ function Navbar() {
     <nav className="bg-dark-purple p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-xl font-bold">
-          Time Tourists
+        <img src={logo} alt="Time Tourists Logo" className="mr-2" style={{height: '2em', width: '4em'}} />
         </Link>
 
         {/* Hamburger button for mobile */}
