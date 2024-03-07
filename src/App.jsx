@@ -13,7 +13,7 @@ import Sources from "./components/pages/sources.jsx";
 import Contact from "./components/pages/contact.jsx";
 
 function App() {
-  const AnimatedGlobeRoutes = ["/", "/select-history", "/history"];
+  const AnimatedGlobeRoutes = ["/", "/select-history", "/search"];
   const { pathname } = useLocation();
   console.log(useLocation());
   return (
