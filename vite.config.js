@@ -9,5 +9,5 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/tests/setup.js',
   },
- // envDir: './src/envs'
+  envDir: './src/envs'
 })
