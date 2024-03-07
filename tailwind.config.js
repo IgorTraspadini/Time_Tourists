@@ -14,6 +14,10 @@ export default {
         'black': '#000000',
         'dark-purple': '#242038',
         'slate-blue': '#725AC1',
+        'french-gray': '#CAC4CE',
+        'tropical-indigo': '#8D86C9',
+        'tekhelet': '#4B3D7D',
+        'linen': '#F7ECE1',
       }
     },
   },
