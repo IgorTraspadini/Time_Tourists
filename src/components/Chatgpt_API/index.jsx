@@ -36,7 +36,7 @@ function ChatComponent(props) {
       const completion_text = chatCompletion.choices[0].message.content;
       const output = completion_text
         .split("->")
-        .map((v, i) => (i > 0 ? <p key={"A" + i} className="text-muted-purple my-1">- {v}</p> : null));
+        .map((v, i) => (i > 0 ? <p key={"A" + i} className="text-tekhelet my-1">- {v}</p> : null));
 
       setResponse(output);
 
@@ -61,8 +61,8 @@ function ChatComponent(props) {
   const personalizedTitle = `${user?.name}'s Personalized Itinerary`;
 
   return (
-    <div className="p-4 my-4 bg-creamy-yellow rounded-lg shadow-lg">
-      <div className="font-semibold mb-2 text-muted-purple">{personalizedTitle}</div>
+    <div className="p-4 my-4 bg-french-gray rounded-lg">
+      <div className="font-semibold mb-2 text-tekhelet">{personalizedTitle}</div>
       <div>{response}</div>
     </div>
   );

@@ -8,7 +8,7 @@ function History() {
   const { selection, user } = useUserContext();
 
   return (
-    <Wrapper className="bg-creamy-yellow p-4 min-h-screen">
+    <Wrapper className="flex flex-col justify-center items-center bg-black p-10 min-h-screen">
       <div className="max-w-4xl mx-auto">
         <PersonalizedMessage
           name={user.name}
