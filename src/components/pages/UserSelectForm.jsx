@@ -33,14 +33,14 @@ function UserSelectForm() {
   };
 
   return (
-    <Wrapper className="bg-creamy-yellow">
+    <Wrapper className="flex flex-col justify-center min-h-screen bg-black">
       <form
         onSubmit={handleSubmit}
-        className="flex h-full justify-center flex-col items-center p-3 border rounded border-lavender shadow-md bg-white"
+        className="flex h-auto justify-center flex-col items-center py-10 px-5 border rounded border-lavender shadow-md bg-french-gray"
       >
         <div className="text-center mb-4">
           {user && (
-            <h1 className="text-muted-purple text-3xl font-bold mb-1">
+            <h1 className="text-tekhelet text-3xl font-bold mb-1">
               Hi, {user.name}
             </h1>
           )}
@@ -87,7 +87,7 @@ function UserSelectForm() {
           />
           <button
             type="submit"
-            className="bg-soft-pink hover:bg-lavender focus:ring-4 focus:outline-none focus:ring-lavender font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mt-3 transition-colors duration-200 text-white"
+            className="bg-tekhelet hover:bg-slate-blue focus:ring-4 focus:outline-none focus:ring-lavender font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mt-3 transition-colors duration-200 text-white"
           >
             Search
           </button>
