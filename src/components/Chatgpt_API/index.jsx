@@ -15,7 +15,7 @@ function ChatComponent(props) {
     }
 
     const openai = new OpenAI({
-      apiKey: process.env.REACT_APP_GREETING,
+      apiKey: import.meta.env.REACT_APP_GREETING,
       dangerouslyAllowBrowser: true,
     });
 
