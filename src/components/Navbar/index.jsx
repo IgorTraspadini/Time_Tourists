@@ -7,7 +7,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-muted-purple p-4">
+    <nav className="bg-dark-purple p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-xl font-bold">
           Time Tourists

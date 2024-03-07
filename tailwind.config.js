@@ -11,6 +11,9 @@ export default {
         'creamy-yellow': '#EDE7B1', // replacing the existing colors
         'sky-blue': '#A9DEF9', // replacing the existing colors
         'muted-purple': '#B884CF',
+        'black': '#000000',
+        'dark-purple': '#242038',
+        'slate-blue': '#725AC1',
       }
     },
   },

@@ -27,7 +27,7 @@ function SignIn() {
   };
 
   return (
-    <Wrapper className="bg-mint-green">
+    <Wrapper className="flex flex-col justify-center min-h-screen bg-black">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col justify-center items-center p-4 border rounded border-lavender shadow-md bg-white"
