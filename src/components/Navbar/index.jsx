@@ -44,7 +44,6 @@ function Navbar() {
 
         {/* Links container, hidden on mobile and expanded on md screens and larger */}
         <div className="hidden md:flex items-center space-x-4">
-           
           <Link
             to="/history"
             className="text-white hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
@@ -56,12 +55,6 @@ function Navbar() {
             className="text-white hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
           >
             About
-          </Link>
-          <Link
-            to="/services"
-            className="text-white hover:text-lavender px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
-          >
-            Services
           </Link>
           <Link
             to="/contact"
@@ -120,12 +113,6 @@ function Navbar() {
                 className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender"
               >
                 About
-              </Link>
-              <Link
-                to="/services"
-                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender"
-              >
-                Services
               </Link>
               <Link
                 to="/contact"
