@@ -6,7 +6,6 @@ import { useUserContext } from "../../context/UserContext";
 
 function Search() {
   const { selection, user } = useUserContext();
-
   return (
     <Wrapper className="bg-creamy-yellow p-4 min-h-screen">
       <div className="max-w-4xl mx-auto">
