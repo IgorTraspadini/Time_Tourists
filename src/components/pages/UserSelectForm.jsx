@@ -15,15 +15,15 @@ function UserSelectForm() {
   });
 
   const handleInputChange = (value, key) => {
-    setHistorySearch((previsonHistorySearch) => ({
-      ...previsonHistorySearch,
+    setHistorySearch((previousHistorySearch) => ({
+      ...previousHistorySearch,
       [key]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // check for empty fields, prevent submit if there are any empty fields
+    // Check for empty fields, prevent submit if there are any empty fields
     if (Object.values(historySearch).some((field) => field === "")) {
       return;
     }
@@ -33,28 +33,29 @@ function UserSelectForm() {
       historySearch.when,
       historySearch.interest
     );
-    navigate("/history");
+    navigate("/history"); // Ensure the navigate path is correct
   };
+
   return (
-    <Wrapper className="bg-light-blue">
+    <Wrapper className="bg-creamy-yellow">
       <form
         onSubmit={handleSubmit}
-        className="flex h-full justify-center flex-col items-center p-3 border rounded border-light-blue shadow-md bg-white"
+        className="flex h-full justify-center flex-col items-center p-3 border rounded border-lavender shadow-md bg-white"
       >
         <div className="text-center mb-4">
           {user && (
-            <h1 className="text-dark-green text-3xl font-bold mb-1">
+            <h1 className="text-muted-purple text-3xl font-bold mb-1">
               Hi, {user.name}
             </h1>
           )}
         </div>
         <div className="mx-auto w-4/5 mt-3">
           <InputField
-            inputId={"where"}
+            inputId="where"
             inputLabel="Where would you like to go?"
             inputType="text"
             placeholder="China"
-            value={historySearch.location}
+            value={historySearch.where}
             handleInputChange={(e) =>
               handleInputChange(e.target.value, "where")
             }
@@ -63,14 +64,22 @@ function UserSelectForm() {
 
           <DropdownField
             currentOption={historySearch.when}
-            dropdownOptions={["Summer", "Winter", "Spring", "Autumn"]}
+            dropdownOptions={[
+              "Stone Age: 3.3 million to 5,000 years ago",
+              "Bronze Age: 5,000 to 1,400 years ago (1,200 BC)",
+              "Iron Age: 1,200 BC to 500 BC",
+              "Classical Era: 500 BC to 500 AD",
+              "Medieval Era: 500 AD to 1500 AD",
+              "Early Modern Era: 1500 AD to 1800 AD",
+              "Modern Era: 1800 AD to present",
+            ]}
             selectOption={(option) => handleInputChange(option, "when")}
-            placeholder="When would you like to visit?"
+            placeholder="Related with period?"
             optionPlaceholder="Select a season"
           />
 
           <InputField
-            inputId={"interest"}
+            inputId="interest"
             inputLabel="What are you interested in?"
             inputType="text"
             placeholder="Fashion"
@@ -82,7 +91,7 @@ function UserSelectForm() {
           />
           <button
             type="submit"
-            className="text-white bg-dark-green hover:bg-bright-blue focus:ring-4 focus:outline-none focus:ring-bright-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mt-3 transition-colors duration-200"
+            className="bg-soft-pink hover:bg-lavender focus:ring-4 focus:outline-none focus:ring-lavender font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mt-3 transition-colors duration-200 text-white"
           >
             Search
           </button>

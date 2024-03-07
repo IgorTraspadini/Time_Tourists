@@ -37,7 +37,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 picture
 
 ## Design draft
-picture
+<img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/ffa9f126-ce65-4b9d-b307-502a66421201" width="48%">
+<img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/79982c73-3b16-45b2-a124-cb0e61673351" width="48%">
+<img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/7de6d0cb-4c83-46e0-9696-1922f64d5ccd">
 
 ## References 
 - [React.js](https://react.dev/)
@@ -46,6 +48,8 @@ picture
 - [React Testing Library](https://www.npmjs.com/package/@testing-library/react)
 - [Node.js](https://nodejs.org/en)
 - [Netlify](https://www.netlify.com/)
+- [Test-Driven Development (TDD)](https://www.geeksforgeeks.org/test-driven-development-tdd/)
+- [Behavior-Driven Development (BDD)](https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/)
 - [xxxx API]()
 - [ChatGPT API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)
 
@@ -57,7 +61,47 @@ picture
 - Rachel
 
 ## Tests
-xxxxxxxxxxxxxxxxx
+To performing the project TDD/BDD was used the libraries Vitest & React Testing Library, with the configurations shows bellow.
+
+```javascript
+// vite.config.js file 
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/tests/setup.js',
+  },
+  envDir: './src/envs'
+})
+
+// setup.js file
+import { expect, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import * as matchers from '@testing-library/jest-dom/matchers';
+expect.extend(matchers);
+afterEach(() => {
+    cleanup();
+});
+
+// .eslintrc.cjs file
+  env: { browser: true, es2020: true, vitest: true },
+
+// package.json file
+# scripts:
+    "test": "vitest",
+# devDependencies:
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "jsdom": "^24.0.0",
+    "vitest": "^1.3.1"
+```
+Test result>>>>>>>>>>
+![test_proj_2](https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/c79cc169-6cd5-437d-83b8-fe0ffd70f174)
 
 ## Credits
 [edX - Bootcamp in Front-End Web Development](https://www.edx.org/course/skills-bootcamp-in-front-end-web-development?parent_component=new-on-edx&webview=false&campaign=Skills+Bootcamp+in+Front-End+Web+Development&source=edx&product_category=boot-camp&placement_url=https%3A%2F%2Fwww.edx.org%2F)
