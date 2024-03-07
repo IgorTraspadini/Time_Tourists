@@ -40,7 +40,7 @@ function DropdownField({
       <button
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
-        className="text-white bg-muted-purple hover:bg-lavender focus:ring-4 focus:outline-none focus:ring-lavender font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between"
+        className="text-white bg-tekhelet hover:bg-slate-blue focus:ring-4 focus:outline-none focus:ring-lavender font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between"
         type="button"
         onClick={() => setOpenDropdown((prev) => !prev)}
         data-dropdown-item="true"
@@ -64,19 +64,19 @@ function DropdownField({
       </button>
       <div
         id="dropdown"
-        className={`z-10 rounded-lg shadow w-full absolute top-full mt-1 bg-creamy-yellow ${
+        className={`z-10 rounded-lg shadow w-full absolute top-full mt-1 bg-tropical-indigo ${
           !openDropdown && "hidden"
         }`}
       >
         <ul
-          className="py-1 text-sm text-muted-purple"
+          className="py-1 text-sm text-dark-purple"
           aria-labelledby="dropdownDefaultButton"
         >
           {dropdownOptions.map((option) => (
             <li key={option} className="w-full" data-dropdown-item="true">
               <button
                 type="button"
-                className="block px-4 py-2 hover:bg-lavender hover:text-white w-full text-left"
+                className="block px-4 py-2 hover:bg-french-gray hover:text-white w-full text-left"
                 onClick={() => {
                   selectOption(option);
                   setOpenDropdown(false);
