@@ -27,13 +27,13 @@ function SignIn() {
   };
 
   return (
-    <Wrapper className="bg-mint-green">
+    <Wrapper className="flex flex-col justify-center min-h-screen bg-black">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center p-4 border rounded border-lavender shadow-md bg-white"
+        className="flex flex-col justify-center items-center py-10 px-5 border rounded border-lavender shadow-md bg-french-gray"
       >
         <div className="text-center mb-4">
-          <h1 className="text-3xl font-bold mb-1 text-muted-purple">Welcome to Time Tourists</h1>
+          <h1 className="text-3xl font-bold mb-1 text-tekhelet">Welcome to Time Tourists</h1>
           <p className="text-base text-gray-700">Enter your details to start exploring</p>
         </div>
 
@@ -60,10 +60,7 @@ function SignIn() {
             required
           />
           <button
-            type="submit"
-            className="bg-soft-pink hover:bg-lavender focus:ring-4 focus:ring-soft-pink text-white font-medium rounded-lg text-sm px-5 py-2.5 mt-4 w-full transition-colors duration-200"
-          >
-            Enter
+            className="bg-tekhelet hover:bg-slate-blue focus:ring-4 focus:ring-soft-pink text-white font-medium rounded-lg text-sm px-5 py-2.5 mt-4 w-full transition-colors duration-200">Enter
           </button>
         </div>
       </form>

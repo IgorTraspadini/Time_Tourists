@@ -17,20 +17,20 @@ function App() {
 
   return (
     <UserContextProvider>
-      <Navbar />
-      <main className="flex flex-col-reverse md:flex-row">
-        <Routes>
-          <Route path="/" element={<SignIn />} />
-          <Route path="history" element={<History />} />
-          <Route path="search" element={<Search />} />
-          <Route path="select-history" element={<UserSelectForm />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-        </Routes>
-        {AnimatedGlobeRoutes.includes(pathname) && <AnimatedGlobe />}
-      </main>
-
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex flex-1">
+          <Routes>
+            <Route path="/" element={<SignIn />} />
+            <Route path="history" element={<History />} />
+            <Route path="select-history" element={<UserSelectForm />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Routes>
+          {AnimatedGlobeRoutes.includes(pathname) && <AnimatedGlobe />}
+        </main>
+        <Footer />
+      </div>
     </UserContextProvider>
   );
 }
