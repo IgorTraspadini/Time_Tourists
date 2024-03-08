@@ -8,19 +8,19 @@ function ChatComponent(props) {
   const [response, setResponse] = useState("");
   const firstTime = useRef(true);
   const { user } = useUserContext();
-  const tk = getToken();
-
 
   useEffect(() => {
 
-    const openai = new OpenAI({
-      apiKey: tk, //import.meta.env.VITE_APP_GREETING,
-      dangerouslyAllowBrowser: true
-    });
-    console.log(tk);
-
-
     async function getOpenAIResponse() {
+
+      const tk = await getToken();
+      console.log(tk);
+
+      const openai = new OpenAI({
+        apiKey: tk, //import.meta.env.VITE_APP_GREETING,
+        dangerouslyAllowBrowser: true
+      });
+
       const prompt =
         "What are the itinerary of things related to" +
         props.interested +
