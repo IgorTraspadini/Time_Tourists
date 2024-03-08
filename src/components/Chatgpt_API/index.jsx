@@ -14,8 +14,6 @@ function ChatComponent(props) {
     async function getOpenAIResponse() {
 
       const tk = await getToken();
-      console.log(tk);
-
       const openai = new OpenAI({
         apiKey: tk, //import.meta.env.VITE_APP_GREETING,
         dangerouslyAllowBrowser: true
