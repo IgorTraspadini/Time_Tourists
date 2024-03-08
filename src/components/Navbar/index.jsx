@@ -111,6 +111,12 @@ function Navbar() {
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
+                to="/History"
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender"
+              >
+                History
+              </Link>
+              <Link
                 to="/about"
                 className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lavender"
               >
