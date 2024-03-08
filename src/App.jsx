@@ -10,11 +10,12 @@ import About from "./components/pages/about.jsx";
 import UserSelectForm from "./components/pages/UserSelectForm";
 import UserContextProvider from "./context/UserContext";
 import Contact from "./components/pages/contact.jsx";
+import { getToken } from "../../assets/js/get_token.js"
 
 function App() {
   const AnimatedGlobeRoutes = ["/", "/select-history", "/search"];
   const { pathname } = useLocation();
-
+  console.log(getToken());
   return (
     <UserContextProvider>
       <div className="flex flex-col min-h-screen">
