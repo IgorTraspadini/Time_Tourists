@@ -30,7 +30,7 @@ function SignIn() {
     <Wrapper className="flex flex-col justify-center min-h-screen bg-black">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center py-10 px-5 border rounded border-lavender shadow-md bg-french-gray"
+        className="flex flex-col justify-center items-center py-10 px-5 border-4 rounded border-muted-purple shadow-md bg-french-gray"
       >
         <div className="text-center mb-4">
           <h1 className="text-3xl font-bold mb-1 text-tekhelet">Welcome to Time Tourists</h1>

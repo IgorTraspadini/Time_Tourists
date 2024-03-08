@@ -7,7 +7,7 @@ import { useUserContext } from "../../context/UserContext";
 function Search() {
   const { selection, user } = useUserContext();
   return (
-    <Wrapper className="bg-creamy-yellow p-4 min-h-screen">
+    <Wrapper className="bg-black p-4 min-h-screen flex flex-col justify-center">
       <div className="max-w-4xl mx-auto">
         <PersonalizedMessage
           name={user.name}

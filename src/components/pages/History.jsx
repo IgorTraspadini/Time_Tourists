@@ -6,16 +6,16 @@ function History() {
   const LStorage = returnToLocalStorage("search");
   return (
     <>
-      <div className="w-full bg-creamy-yellow p-4 min-h-screen mx-auto">
-        <div className="py-5 bg-creamy-yellow mx-5 rounded-lg p-4 shadow">
+      <div className="w-full bg-black p-4 min-h-screen mx-auto">
+        <div className="py-5 bg-french-gray mx-5 rounded-lg p-4 shadow border-4 rounded border-muted-purple shadow-md">
           {LStorage.map((item, it) =>
             <>
-              <p key={Math.random()} className="text-muted-purple font-semibold">Itinerary to {item.user}, going to {item.place} in {item.period} with interest in {item.interest}!</p>
+              <p key={Math.random()} className="text-tekhelet font-semibold">Itinerary for {item.user}, who went to {item.place} in {item.period} with an interest in {item.interest}!</p>
               <div className="mb-5">
                 {item.response.map((v, i) =>
                   <>
                     {i > 0 &&
-                      <div key={Math.random()} className="mb-2 mt-2 ms-4 text-muted-purple">{LStorage[parseInt(it)].response[parseInt(i)].props.children}</div>}
+                      <div key={Math.random()} className="mb-2 mt-2 ms-4 text-tekhelet">{LStorage[parseInt(it)].response[parseInt(i)].props.children}</div>}
                   </>
                 )}
               </div>
