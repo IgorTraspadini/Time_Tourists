@@ -27,7 +27,7 @@ function SignIn() {
   };
 
   return (
-    <Wrapper className="flex flex-col justify-center min-h-screen bg-black">
+    <Wrapper className="flex flex-col justify-center min-h-screen bg-black sign-in-container">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col justify-center items-center py-10 px-5 border-4 rounded border-muted-purple shadow-md bg-french-gray"

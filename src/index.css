@@ -66,3 +66,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@media (min-width: 768px) {
+  .sign-in-container {
+    width: 50%;
+  }
+  .animated-globe-wrapper {
+    width: 50%
+  }
+}

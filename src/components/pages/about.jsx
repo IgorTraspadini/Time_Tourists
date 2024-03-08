@@ -16,7 +16,7 @@ function About() {
         <header>
             <img src={logo} alt="Time Tourists Logo" className="profile-image w-1/2 h-auto mx-auto"/>
         </header>
-        <h1 className="mb-2">Welcome to Time Tourists!</h1>
+        <h1 className="mb-2 font-bold">Welcome to Time Tourists!</h1>
         <section>
           <p className="text-center leading-relaxed">
               At Time Tourists, we merge the thrill of travel with the allure of history, offering you a one-of-a-kind app that crafts itineraries for exploring countries through the ages. Input your destination and era, and presto! You're on your way to an adventure that spans centuries. From the grandiose courts of Renaissance Italy to the spirited speakeasies of the Roaring Twenties, we curate experiences that breathe life into history, making your travels not just memorable, but truly timeless.

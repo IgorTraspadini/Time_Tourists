@@ -89,7 +89,7 @@ function Navbar() {
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   type="button"
-                  className="bg-muted-purple rounded-md p-2 inline-flex items-center justify-center text-white hover:text-lavender focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  className="bg-dark-purple rounded-md p-2 inline-flex items-center justify-center text-white hover:text-lavender focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 >
                   <span className="sr-only">Close main menu</span>
                   {/* Close icon */}
