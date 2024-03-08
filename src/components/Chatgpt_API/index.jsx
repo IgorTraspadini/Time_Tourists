@@ -8,8 +8,7 @@ function ChatComponent(props) {
   const [response, setResponse] = useState("");
   const firstTime = useRef(true);
   const { user } = useUserContext();
-  console.log(getToken());
-
+  
   useEffect(() => {
     if (firstTime.current) {
       firstTime.current = false;
@@ -17,8 +16,9 @@ function ChatComponent(props) {
     }
 
     const openai = new OpenAI({
-      apiKey: getToken(), //import.meta.env.VITE_APP_GREETING,
+      apiKey: await getToken(), //import.meta.env.VITE_APP_GREETING,
       dangerouslyAllowBrowser: true,
+      console.log(getToken()); 
     });
     //console.log(import.meta.env.VITE_APP_GREETING)
 
