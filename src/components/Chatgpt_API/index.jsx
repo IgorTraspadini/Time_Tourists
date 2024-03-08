@@ -9,17 +9,23 @@ function ChatComponent(props) {
   const firstTime = useRef(true);
   const { user } = useUserContext();
   const tk = getToken();
-  
+
+
   useEffect(() => {
     if (firstTime.current) {
       firstTime.current = false;
       return;
     }
 
-    const openai = new OpenAI({
-      apiKey: tk, //import.meta.env.VITE_APP_GREETING,
-      dangerouslyAllowBrowser: true
-    });
+    try {
+      const openai = new OpenAI({
+        apiKey: tk, //import.meta.env.VITE_APP_GREETING,
+        dangerouslyAllowBrowser: true
+      });
+      console.log(tk);
+    } catch (err) {
+      console.log(err);
+    }
 
     async function getOpenAIResponse() {
       const prompt =
