@@ -2,11 +2,13 @@ import OpenAI from "openai";
 import { useState, useEffect, useRef } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { addToLocalStorage } from "../../assets/js/add_return_ItemToLocalStorage.js";
+import { getToken } from "../../assets/js/get_token.js"
 
 function ChatComponent(props) {
   const [response, setResponse] = useState("");
   const firstTime = useRef(true);
   const { user } = useUserContext();
+  console.log(getToken());
 
   useEffect(() => {
     if (firstTime.current) {
@@ -15,10 +17,10 @@ function ChatComponent(props) {
     }
 
     const openai = new OpenAI({
-      apiKey: import.meta.env.VITE_APP_GREETING,
+      apiKey: getToken(), //import.meta.env.VITE_APP_GREETING,
       dangerouslyAllowBrowser: true,
     });
-    console.log(import.meta.env.VITE_APP_GREETING)
+    //console.log(import.meta.env.VITE_APP_GREETING)
 
     async function getOpenAIResponse() {
       const prompt =
