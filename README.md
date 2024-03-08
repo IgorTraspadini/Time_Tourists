@@ -24,17 +24,14 @@ A unique application designed to take the user back in time and learn more about
 * xxxxxxxxxxxxxxxxxx
 * xxxxxxxxxxxxxxxxxx
 
-## Usage
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 ## Link to website
-[Time Tourists]()
+[Time Tourists](https://time-tourists.netlify.app/)
 
 ## Link to repo
 [Project Repo](https://github.com/IgorTraspadini/Time_Tourists)
 
 ## Final product
-picture
+![image](https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/67de48fd-143f-47ff-bc19-38a7e292cda8)
 
 ## Design draft
 <img src="https://github.com/IgorTraspadini/Time_Tourists/assets/126266157/ffa9f126-ce65-4b9d-b307-502a66421201" width="48%">
