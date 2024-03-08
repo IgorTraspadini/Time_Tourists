@@ -10,8 +10,9 @@ function Navbar() {
   return (
     <nav className="bg-dark-purple p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-xl font-bold">
+        <Link to="/" className="flex items-center text-white text-xl font-bold text-white hover:text-lavender focus:outline-none transition duration-300">
         <img src={logo} alt="Time Tourists Logo" className="mr-2" style={{height: '2em', width: '4em'}} />
+        Time Tourists
         </Link>
 
         {/* Hamburger button for mobile */}
@@ -77,7 +78,7 @@ function Navbar() {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="rounded-lg shadow-md bg-muted-purple ring-1 ring-black ring-opacity-5 overflow-hidden">
+          <div className="rounded-lg shadow-md bg-tekhelet ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <div>
                 <Link to="/" className="text-white text-xl font-bold">
