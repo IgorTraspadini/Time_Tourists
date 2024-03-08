@@ -13,15 +13,12 @@ function ChatComponent(props) {
 
   useEffect(() => {
 
-    try {
-      const openai = new OpenAI({
-        apiKey: tk, //import.meta.env.VITE_APP_GREETING,
-        dangerouslyAllowBrowser: true
-      });
-      console.log(tk);
-    } catch (err) {
-      console.log(err);
-    }
+    const openai = new OpenAI({
+      apiKey: tk, //import.meta.env.VITE_APP_GREETING,
+      dangerouslyAllowBrowser: true
+    });
+    console.log(tk);
+
 
     async function getOpenAIResponse() {
       const prompt =
