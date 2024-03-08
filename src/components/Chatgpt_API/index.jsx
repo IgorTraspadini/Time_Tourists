@@ -12,10 +12,6 @@ function ChatComponent(props) {
 
 
   useEffect(() => {
-    if (firstTime.current) {
-      firstTime.current = false;
-      return;
-    }
 
     try {
       const openai = new OpenAI({
