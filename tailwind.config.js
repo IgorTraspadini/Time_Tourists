@@ -18,6 +18,7 @@ export default {
         'tropical-indigo': '#8D86C9',
         'tekhelet': '#4B3D7D',
         'linen': '#F7ECE1',
+        'electric-indigo': '#5500FF',
       }
     },
   },

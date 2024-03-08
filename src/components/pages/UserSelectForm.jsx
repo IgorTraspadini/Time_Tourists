@@ -36,7 +36,7 @@ function UserSelectForm() {
     <Wrapper className="flex flex-col justify-center min-h-screen bg-black">
       <form
         onSubmit={handleSubmit}
-        className="flex h-auto justify-center flex-col items-center py-10 px-5 border rounded border-lavender shadow-md bg-french-gray"
+        className="flex h-auto justify-center flex-col items-center py-10 px-5 border-4 rounded border-muted-purple shadow-md bg-french-gray"
       >
         <div className="text-center mb-4">
           {user && (
