@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { useState, useEffect, useRef } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { addToLocalStorage } from "../../assets/js/add_return_ItemToLocalStorage.js";
+import { getToken } from "../../assets/js/get_token.js"
 
 function ChatComponent(props) {
   const [response, setResponse] = useState("");
@@ -9,18 +10,15 @@ function ChatComponent(props) {
   const { user } = useUserContext();
 
   useEffect(() => {
-    if (firstTime.current) {
-      firstTime.current = false;
-      return;
-    }
-
-    const openai = new OpenAI({
-      apiKey: import.meta.env.VITE_APP_GREETING,
-      dangerouslyAllowBrowser: true,
-    });
-    console.log(import.meta.env.VITE_APP_GREETING)
 
     async function getOpenAIResponse() {
+
+      const tk = await getToken();
+      const openai = new OpenAI({
+        apiKey: tk, //import.meta.env.VITE_APP_GREETING,
+        dangerouslyAllowBrowser: true
+      });
+
       const prompt =
         "What are the itinerary of things related to" +
         props.interested +

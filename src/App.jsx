@@ -115,7 +115,6 @@ import Contact from "./components/pages/contact.jsx";
 function App() {
   const AnimatedGlobeRoutes = ["/", "/select-history", "/search"];
   const { pathname } = useLocation();
-
   return (
     <UserContextProvider>
       <div className="flex flex-col min-h-screen">
